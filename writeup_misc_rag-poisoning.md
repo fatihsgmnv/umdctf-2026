@@ -153,6 +153,8 @@ What to look for:
 
 If you see these, your hypothesis is confirmed: poisoned RAG context is real.
 
+<img width="730" height="254" alt="Screenshot 2026-04-26 at 13 15 42" src="https://github.com/user-attachments/assets/29f61bb5-c68f-4e09-95f4-7bf2f6684e77" />
+
 ### Step 4 - Trigger the leak line
 
 Use this exact query repeatedly:

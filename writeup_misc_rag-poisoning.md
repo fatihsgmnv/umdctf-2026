@@ -109,6 +109,9 @@ Expected:
 
 - any bot response (can vary)
 
+<img width="586" height="170" alt="Screenshot 2026-04-26 at 13 09 27" src="https://github.com/user-attachments/assets/6e009555-dd9a-453f-ae34-1fab6d20974d" />
+
+
 ### Step 3 - Decode Flask session cookie (critical evidence step)
 
 ```bash

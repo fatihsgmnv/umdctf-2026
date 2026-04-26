@@ -1,38 +1,34 @@
 ---
-title: "rag-poisoning (Beginner Walkthrough)"
-ctf: "UMDCTF"
+challenge: "rag-poisoning"
+ctf: "UMDCTF 2026"
 date: 2026-04-26
 category: misc
-difficulty: medium
-points: 0
 flag_format: "UMDCTF{...}"
-author: "sigmanova"
 ---
 
-# rag-poisoning (Very Beginner, Easy-to-Follow)
+# Rag-Poisoning 
 
 This writeup is intentionally split into 2 parts:
 
-1. **Part A (Explanation)**: What is happening and why.
-2. **Part B (Hands-on Steps)**: Exactly what to run, in order, until flag is captured.
+1. **Part 1. Mindsetn**: What is happening and why.
+2. **Part 2. Hands-on Steps**: Exactly what to run, in order, until flag is captured.
 
 ---
 
-## Part A - Explanation (Mindset First)
+## Part 1 - Mindset
 
-### A1) What is this challenge?
+### 1. What is this challenge?
 
 You are given a chatbot web service:
 
 - `http://rag-poisoning.challs.umdctf.io:45139/`
 
 Challenge name is **rag-poisoning**, so likely attack surface is:
-
 1. RAG retrieval context
 2. Prompt injection inside retrieved documents
 3. Model leaking hidden values through poisoned instructions
 
-### A2) What do we need to prove?
+### 2. What do we need to prove?
 
 Before trying random prompts, we want evidence:
 
@@ -40,7 +36,7 @@ Before trying random prompts, we want evidence:
 2. Is the model reading those poisoned lines?
 3. Can we trigger a leak reliably?
 
-### A3) Why inspect Flask session cookie?
+### 3. Why inspect Flask session cookie?
 
 Because in this challenge, session data is stored client-side in cookie `session` (signed, but readable payload).
 
@@ -51,7 +47,7 @@ If we decode that payload, we can see:
 
 This is a beginner-friendly way to move from guessing to evidence-based exploitation.
 
-### A4) Core exploit idea
+### 4. Core exploit idea
 
 From decoded documents, we find repeated trigger-style lines related to:
 
@@ -68,9 +64,7 @@ So the plan is:
 
 ---
 
-## Part B - Hands-on Step-by-Step (Execution Path)
-
-Follow this in sequence. Do not skip.
+## Part 2 - Hands-on Step-by-Step 
 
 ### Step 0 - Environment check
 

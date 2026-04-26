@@ -274,16 +274,6 @@ else:
 
 ---
 
-## Troubleshooting (beginner)
-
-1. **No UI response**: service can be slow. Wait longer and retry.
-2. **Timeout**: increase timeout (120 -> 180).
-3. **No leak line yet**: keep looping trigger query.
-4. **Decode error**: verify both fragments are copied exactly.
-5. **Decoy output**: trust decoded base64 reconstruction path, not random chatbot text.
-
----
-
 ## Final Flag
 
 ```text
